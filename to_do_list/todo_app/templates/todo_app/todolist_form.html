@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>{{ title }}</h3>
+<div>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input 
+                value="Save"
+                type="Submit">
+            <input 
+                value="Cancel"
+                type="text"
+                onclick="location.href='{% url "index" %}'">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
